@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <h1><%= title %></h1>
+            <thead>
+              <tr>
+                <th scope="col">Nama Produk</th>
+                <th scope="col">Keterangan</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let produk of produks) { %>
+              <tr>
+                <th scope="row"><%= produk.nama_produk %></th>
+                <th scope="row"><%= produk.keterangan %></th>
+                <th scope="row"><%= produk.harga %></th>
+                <th scope="row"><%= produk.jumlah %></th>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          <form action="/tambahkan" method="post">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama Produk</label>
+              <input type="text" class="form-control" name="nama">
+            </div>
+            <div class="mb-3">
+                <label for="keterangan" class="form-label">keterangan</label>
+                <input type="text" class="form-control" name="keterangan">
+            </div>
+            <div class="mb-3">
+                <label for="harga" class="form-label">Harga</label>
+                <input type="text" class="form-control" name="harga">
+            </div>  
+            <div class="mb-3">
+                <label for="jumlah" class="form-label">Jumlah</label>
+                <input type="text" class="form-control" name="jumlah">
+              </div>    
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
